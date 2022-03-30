@@ -16,26 +16,28 @@ from forte.data.ontology import Annotation
 from forte.data.readers import OntonotesReader, AudioReader
 from forte.data.data_pack import DataPack
 from forte.pipeline import Pipeline
-# notebook should be running from project root folder
-data_path = os.path.abspath(os.path.join('../transcript'))
 
-# pipeline: Pipeline = Pipeline()
-# pipeline.set_reader(OntonotesReader())
-# pipeline.initialize()
-# data_pack: DataPack = pipeline.process_one(data_path)
+def nameEntityRecognition(path): 
+    # notebook should be running from project root folder
+    data_path = path;
 
-for pack in Pipeline().set_reader(
-        PlainTextReader()
-).add(
-    SpacyProcessor(), {"processors": ["sentence", "tokenize", "pos", "lemma", "ner"]}
-).add( 
-    StaveProcessor(), {
-                "port": 8880,
-                "project_name": "Meeting Notes Analyzer"
-            }
-).initialize().process_dataset(data_path):
-    for sentence in pack.get("ft.onto.base_ontology.Sentence"):
-        print("The sentence is: ", sentence.text)
-        print("The entities are: ")
-        for ent in pack.get("ft.onto.base_ontology.EntityMention", sentence):
-            print(ent.text, ent.ner_type)
+    # pipeline: Pipeline = Pipeline()
+    # pipeline.set_reader(OntonotesReader())
+    # pipeline.initialize()
+    # data_pack: DataPack = pipeline.process_one(data_path)
+
+    for pack in Pipeline().set_reader(
+            PlainTextReader()
+    ).add(
+        SpacyProcessor(), {"processors": ["sentence", "tokenize", "pos", "lemma", "ner"]}
+    ).add( 
+        StaveProcessor(), {
+                    "port": 8880,
+                    "project_name": "Meeting Notes Analyzer"
+                }
+    ).initialize().process_dataset(data_path):
+        for sentence in pack.get("ft.onto.base_ontology.Sentence"):
+            print("The sentence is: ", sentence.text)
+            print("The entities are: ")
+            for ent in pack.get("ft.onto.base_ontology.EntityMention", sentence):
+                print(ent.text, ent.ner_type)
