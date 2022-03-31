@@ -3,7 +3,7 @@ from rest_framework import viewsets
 from .serializers import NotesSerializer
 from .models import Notes, Audio_store 
 from .forms import AudioForm
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.conf import settings
 from .media.documents.audioProcessing import recognitionAndSegmentation
 from .media.documents.nameEntityRec.entity import nameEntityRecognition
@@ -23,8 +23,8 @@ def Audio_store(request):
             transcript_path = os.path.abspath(os.path.join('notes/media/documents/transcript'))
             print(transcript_path);
             nameEntityRecognition(transcript_path); 
-            print(fileName)
-            return HttpResponse('successfully uploaded')
+            return HttpResponseRedirect('http://localhost:8880/viewer/')
+            # return HttpResponse('successfully uploaded')
     else: 
         form = AudioForm() 
     return render(request, 'aud.html', {'form' : form}) 
