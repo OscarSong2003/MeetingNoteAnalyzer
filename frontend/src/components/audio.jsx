@@ -1,15 +1,14 @@
 import AudioReactRecorder, { RecordState } from 'audio-react-recorder'
 import {useState} from 'react'
 import { FaMicrophoneAlt } from "react-icons/fa";
+import NavBar from './navbar';
+import Footer from './footer';
+
 import {
     VStack, 
     Text,
     Button,
     Container,
-    HStack, 
-    Flex,
-    Center,
-    Box,
     Stack,
     Icon
 } from "@chakra-ui/react";
@@ -35,7 +34,9 @@ const Audio = () => {
     }
 
     return (
-        <Container maxWidth="container.xl" bg='blue.600' spacing="10px" centerContent padding={20}>
+        <>
+        <NavBar />
+        <Container maxWidth="container.xl" bg='blue.600' spacing="14px" centerContent padding={20}>
             <VStack spacing="25px"> 
                 <VStack>
                     <Icon as={FaMicrophoneAlt} w={20} h={20} />
@@ -44,7 +45,7 @@ const Audio = () => {
                     <AudioReactRecorder
                         state={recordState}
                         onStop={onStop}
-                        backgroundColor='rgb(201, 198, 189)'
+                        backgroundColor='rgba(66, 153, 225, 0.6)'
                         canvasHeight={100}
                     />
                 </VStack>
@@ -64,6 +65,8 @@ const Audio = () => {
                 </Stack>
             </VStack>
         </Container>
+        <Footer />
+        </>
     )
 }
 export default Audio; 
