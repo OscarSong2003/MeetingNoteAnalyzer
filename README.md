@@ -11,10 +11,10 @@
 1: Clone Repository 
 2: Set up virtual environment: https://virtualenv.pypa.io/en/latest/user_guide.html (Command: virtualenv venv p=python3.8.5)
    NOTE: make sure to specify python version
-2: Navigate to frontend and pip install libraries specified in requirements.txt 
-3: Navigate into backend and npm install packages from package.json
-4: In frontend directory: run npm run start to start server on localhost:3000
-5. In backend directory: run python manage.py runserver to start backend 
+3: Navigate to frontend and pip install libraries specified in requirements.txt 
+4: Navigate into backend and npm install packages from package.json
+5: In frontend directory: run npm run start to start server on localhost:3000
+6. In backend directory: run python manage.py runserver to start backend 
 
 # Restrictions
 1: Currently the analysis cannot handle very large/long audio files as it would require the use of cloud storage and asynchronous requests (user can implement this on top of current implementation if necessary) 
