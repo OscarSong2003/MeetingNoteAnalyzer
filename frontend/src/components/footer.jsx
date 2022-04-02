@@ -7,7 +7,10 @@ const Footer = () => (
     <Container as="footer" role="contentinfo" py={{ base: '12', md: '16' }}>
       <Stack spacing={{ base: '4', md: '5' }}>
         <Stack justify="space-between" direction="row" align="center">
-          <Logo />
+          <img alt="forte" height={60} width={80} src="https://raw.githubusercontent.com/asyml/forte/master/docs/_static/img/logo_h.png"/>
+          <img alt="stave" height={60} width={80} src="https://raw.githubusercontent.com/asyml/stave/master/public/Stave-dark-text@1x.png" />
+          <img alt="react" height={60} width={80} src="https://logos-download.com/wp-content/uploads/2016/09/React_logo_wordmark.png"/>
+          <img alt="django" height={60} width={80} src="https://www.djangoproject.com/m/img/logos/django-logo-negative.png"/>
           <ButtonGroup variant="ghost">
             <IconButton
               as="a"
