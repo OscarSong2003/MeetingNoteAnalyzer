@@ -7,7 +7,7 @@
 - Uses Stave to display the annotations 
 - Front end is built using React, React-Bootstrap, React-voice-recording library, and Chokra UI
 
-# To start: 
+# To Start:
 1: Clone Repository 
 2: Set up virtual environment: https://virtualenv.pypa.io/en/latest/user_guide.html (Command: virtualenv venv p=python3.8.5)
    NOTE: make sure to specify python version
