@@ -5,7 +5,7 @@ from .models import Notes, Audio_store
 from .forms import AudioForm
 from django.http import HttpResponse, HttpResponseRedirect
 from django.conf import settings
-from .media.documents.audioProcessing import recognitionAndSegmentation
+from .media.documents.audioProcessing import recognitionAndSegmentation, getTranscript
 from .media.documents.nameEntityRec.entity import nameEntityRecognition
 # Create your views here.
 import os
@@ -19,7 +19,8 @@ def Audio_store(request):
         if form.is_valid(): 
             form.save()
             fileName = request.FILES['record'].name
-            recognitionAndSegmentation(f'notes/media/documents/{fileName}', fileName)
+            # recognitionAndSegmentation(f'notes/media/documents/{fileName}', fileName)
+            getTranscript(f'notes/media/documents/{fileName}', fileName)
             transcript_path = os.path.abspath(os.path.join('notes/media/documents/transcript'))
             print(transcript_path);
             nameEntityRecognition(transcript_path); 
