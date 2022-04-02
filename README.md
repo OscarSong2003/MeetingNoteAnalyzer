@@ -26,4 +26,5 @@
 - pydub and google speech api: https://github.com/jiaaro/pydub
 - stave for front-end annotations: https://github.com/asyml/stave 
 
-
+# Video Demonstration (Informative Purpose Only)
+- https://drive.google.com/file/d/1m-qdOyXkY3p4a4CR-P371-vU2ZP0eGBe/view?usp=sharing
