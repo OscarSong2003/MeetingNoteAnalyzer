@@ -2,7 +2,7 @@
 
 
 - A simple interface that allows the user to record one/multiple voices
-- Uses Django as backend framework, and Forte to conduct processing. Also uses google speech to text recognition API to transcript text. 
+- Uses Django as backend framework, and Forte to conduct processing. Also uses google speech to text recognition API to transcribe text. 
 - Conducts speaker segmentation to identify speakers. 
 - Uses Stave to display the annotations 
 - Front end is built using React, React-Bootstrap, React-voice-recording library, and Chokra UI
